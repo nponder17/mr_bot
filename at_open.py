@@ -24,7 +24,7 @@ from telegram_utils import tg_send
 ET = pytz.timezone("America/New_York")
 
 # Live controls
-DRY_RUN = False
+DRY_RUN = True
 FORCE_EXEC_DATE = None  # e.g. "2026-03-05" to test exits early
 
 # Avoid tiny "dust" sells
