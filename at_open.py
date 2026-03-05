@@ -168,12 +168,17 @@ def main():
     if cal.empty:
         raise RuntimeError("Trading calendar empty.")
 
+    # --- Guard: cron may run on weekends/holidays. Exit unless forced test date.
+    cal_dates = set(cal["date"].tolist())
+    if (not FORCE_EXEC_DATE) and (run_date not in cal_dates):
+        print(f"Not a trading day ({run_date}); exiting.")
+        return
+
     # Determine exec_date (the trading day at open we execute)
     if FORCE_EXEC_DATE:
         exec_date_str = FORCE_EXEC_DATE
         exec_date = datetime.strptime(exec_date_str, "%Y-%m-%d").date()
     else:
-        cal_dates = set(cal["date"].tolist())
         if run_date not in cal_dates:
             exec_date = cal[cal["date"] > run_date].iloc[0]["date"]
         else:

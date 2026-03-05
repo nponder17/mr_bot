@@ -49,6 +49,12 @@ def main():
     if cal.empty:
         raise RuntimeError("Trading calendar empty; check Alpaca connectivity.")
 
+    # --- Guard: cron may run on weekends/holidays. Only generate plans on trading days.
+    cal_dates = set(cal["date"].tolist())
+    if today not in cal_dates:
+        print(f"Not a trading day ({today}); exiting.")
+        return
+
     next_td = get_next_trading_day(cal, today_date=today)
 
     universe_path = os.path.join(DATA_DIR, "universe.csv")
