@@ -25,7 +25,7 @@ ET = pytz.timezone("America/New_York")
 
 # Live controls
 DRY_RUN = True
-FORCE_EXEC_DATE = 2026-03-06  # e.g. "2026-03-05" to test exits early
+FORCE_EXEC_DATE = "2026-03-06"  # e.g. "2026-03-05" to test exits early
 
 # Avoid tiny "dust" sells
 MIN_SELL_QTY = 1e-6
