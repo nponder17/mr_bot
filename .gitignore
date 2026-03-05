@@ -1,0 +1,14 @@
+# secrets
+.env
+
+# database
+bot_state.sqlite
+*.sqlite
+
+# python junk
+__pycache__/
+*.pyc
+
+# logs
+logs/
+*.log
