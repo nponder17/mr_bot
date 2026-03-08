@@ -26,7 +26,7 @@ MODE = "oo"   # open-to-open execution assumption
 
 # Regime gating
 DISP_LAG_DAYS = 1
-LOW_Q = 0.55
+LOW_Q = 0.50
 ROLLING_WINDOW = 252
 MIN_NAMES_FOR_DISP = 50
 
