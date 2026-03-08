@@ -30,6 +30,12 @@ LOW_Q = 0.55
 ROLLING_WINDOW = 252
 MIN_NAMES_FOR_DISP = 50
 
+# --- NEW: Low-vol regime skip ---
+USE_LOW_VOL_SKIP = True
+REGIME_SYMBOL = "SPY"
+REGIME_VOL_WINDOW = 20
+LOW_VOL_SKIP_PCT = 0.20  # skip the lowest 20% of vol20 days
+
 # Risk controls / safety
 MIN_PRICE = 2.0               # avoid penny-ish
 MAX_POSITIONS = 10            # should match BOTTOM_N
